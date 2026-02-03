@@ -713,3 +713,50 @@ h2 {
         align-items: center;
     }
 }
+
+/* Landscape Mode Adjustments (Mobile Rotated) */
+@media (max-height: 600px) and (orientation: landscape) {
+    #hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 4rem 0;
+    }
+
+    .cinematic-title {
+        font-size: 4rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    /* Keep burger menu in landscape mobile */
+    .menu-toggle {
+        display: block;
+    }
+
+    .characters-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .char-card {
+        height: 350px;
+        width: 250px;
+    }
+
+    .video-wrapper iframe {
+        height: 100%;
+    }
+
+    .parallax-bg {
+        background-position: center top;
+        background-size: cover;
+    }
+}
+
+/* Ensure images re-flow correctly */
+img {
+    max-width: 100%;
+    height: auto;
+}
