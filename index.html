@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCARLET | Experiência Cênica</title>
+    <meta name="description" content="Espetáculo Scarlet. Autoficção, identidade e performance.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <div id="smooth-scroll-wrapper">
+        <header class="glass-header">
+            <nav>
+                <div class="logo">SCARLET</div>
+                <ul class="nav-links">
+                    <li><a href="#sinopsis">O Espetáculo</a></li>
+                    <li><a href="#personajes">Personagens</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#video">Teaser</a></li>
+                    <li><a href="#ficha">Ficha Técnica</a></li>
+                </ul>
+                <div class="header-actions">
+                    <a href="https://www.instagram.com/espetaculoscarlet/" target="_blank" class="instagram-btn"><i
+                            class="fab fa-instagram"></i></a>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- SCENE 1: THE PROLOGUE (HERO) -->
+        <section id="hero" class="scenography-section">
+            <div class="carousel-layer">
+                <!-- Tapa starts, then carousel rotates through selected photos -->
+                <div class="slide active" style="background-image: url('img/tapa.png'); filter: brightness(0.6);"></div>
+                <div class="slide" style="background-image: url('img/slide1.jpg');"></div> <!-- 0016 -->
+                <div class="slide" style="background-image: url('img/carrusel_extra1.jpg');"></div> <!-- 0142 -->
+                <div class="slide" style="background-image: url('img/carrusel_extra2.jpg');"></div> <!-- 0222 -->
+                <div class="slide" style="background-image: url('img/carrusel_extra3.jpg');"></div> <!-- 0107 -->
+                <div class="slide" style="background-image: url('img/carrusel_extra4.jpg');"></div> <!-- 0159 -->
+            </div>
+            <div class="vignette-overlay"></div>
+
+            <div class="hero-content">
+                <h1 class="cinematic-title">SCARLET</h1>
+                <p class="cinematic-subtitle">Autoficção • Identidade • Performance</p>
+                <div class="scroll-indicator"><span></span></div>
+            </div>
+        </section>
+
+        <!-- SCENE 2: THE NARRATIVE (SINOPSE) -->
+        <section id="sinopsis" class="relative spacer-section">
+            <div class="content-container">
+                <div class="glass-panel text-reveal">
+                    <h2>Sinopse</h2>
+                    <p class="lead">Uma exploração profunda sobre a identidade, o desejo e a liberdade.</p>
+                    <p><em>Scarlet</em> nos convida a questionar as normas estabelecidas e a olhar através do espelho de
+                        nossas próprias construções sociais.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 3: THE FACES (PERSONAJES) -->
+        <section id="personajes" class="dark-section">
+            <div class="content-container">
+                <h2 class="section-title text-center">As Máscaras</h2>
+                <div class="characters-grid">
+                    <div class="char-card">
+                        <div class="char-inner">
+                            <div class="char-front"
+                                style="background-image: url('img/slide2.jpg'); background-position: center;">
+                                <h3>Scarlet</h3>
+                            </div> <!-- slide2 used here -->
+                            <div class="char-back">
+                                <h3>Scarlet</h3>
+                                <p>O ícone. A diva. A imagem.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <div class="char-inner">
+                            <div class="char-front"
+                                style="background-image: url('img/Genuino.jpg'); background-position: center;">
+                                <h3>Genuíno</h3>
+                            </div>
+                            <div class="char-back">
+                                <h3>Genuíno</h3>
+                                <p>A verdade. A carne. A busca.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="char-card">
+                        <div class="char-inner">
+                            <div class="char-front" style="background-image: url('img/bw4.png');">
+                                <h3>Darah Elza</h3>
+                            </div>
+                            <div class="char-back">
+                                <h3>Darah Elza</h3>
+                                <p>A ancestralidade. O eco.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 4: CREATORS & DOCUMENTS (MEMORIA) -->
+        <section id="equipo" class="dark-section relative">
+            <div class="content-container">
+                <h2 class="section-title">Corpo e Mente</h2>
+
+                <div class="creators-grid">
+                    <!-- Creator 1 -->
+                    <div class="creator-card glass-panel">
+                        <a href="docs/cv_fernando.pdf" target="_blank">
+                            <img src="img/foto_fernando.jpg" alt="Fernando Veríssimo" class="creator-avatar">
+                        </a>
+                        <h3>Fernando Veríssimo</h3>
+                        <p class="role">Dramaturgia, Produção & Atuação</p>
+                        <div class="doc-links">
+                            <a href="docs/cv_fernando.pdf" target="_blank" class="text-link">
+                                <i class="fas fa-file-alt"></i> Ver Currículo
+                            </a>
+                            <a href="docs/clipping_fernando.pdf" target="_blank" class="text-link">
+                                <i class="fas fa-newspaper"></i> Ver Clipping
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Creator 2 -->
+                    <div class="creator-card glass-panel">
+                        <a href="docs/cv_fabiano.pdf" target="_blank">
+                            <img src="img/foto_fabiano.jpg" alt="Fabiano Lana" class="creator-avatar">
+                        </a>
+                        <h3>Fabiano Lana</h3>
+                        <p class="role">Direção, Cenário & Identidade</p>
+                        <div class="doc-links">
+                            <a href="docs/cv_fabiano.pdf" target="_blank" class="text-link">
+                                <i class="fas fa-file-alt"></i> Ver Currículo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT DOCUMENTS -->
+                <div class="project-docs glass-panel mt-4">
+                    <h3>Arquivos do Espetáculo</h3>
+                    <div class="download-grid-small">
+                        <a href="docs/clipping_scarlet.pdf" target="_blank" class="doc-pill">
+                            <i class="fas fa-star"></i> Clipping Scarlet
+                        </a>
+                        <a href="SCARLET Press Kit.pdf" target="_blank" class="doc-pill">
+                            <i class="fas fa-book"></i> Press Kit
+                        </a>
+                        <a href="Rider Scarlet.pdf" target="_blank" class="doc-pill">
+                            <i class="fas fa-tools"></i> Rider Técnico
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 5: IMMERSION (VIDEO) -->
+        <section id="video" class="parallax-section">
+            <div class="parallax-bg"
+                style="background-image: url('img/Scarlet_Foto_Susan Sena-0107.jpg'); opacity: 0.3;"></div>
+            <div class="content-container text-center">
+                <h2>O Movimento</h2>
+                <div class="video-wrapper glass-panel">
+                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/ClreJAfc4nA"
+                        title="Scarlet Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 6: TEASER GALLERY -->
+        <section id="galeria" class="dark-section">
+            <div class="content-container full-width">
+                <h2 class="section-title">Fragmentos Visuais</h2>
+                <div class="masonry-grid">
+                    <div class="masonry-item"><img src="img/Scarlet_Foto_Susan Sena-0056.jpg" alt="Atmosphere"></div>
+                    <div class="masonry-item"><img src="img/Scarlet_Foto_Susan Sena-0159.jpg" alt="Detail"></div>
+                    <div class="masonry-item"><img src="img/Scarlet_Foto_Susan Sena-0057.jpg" alt="Shadow"></div>
+                    <div class="masonry-item"><img src="img/Scarlet_Foto_Susan Sena-0060.jpg" alt="Light"></div>
+                    <div class="masonry-item"><img src="img/Scarlet_Foto_Susan Sena-0222.jpg" alt="Texture"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCENE 7: CREDITS (FICHA) -->
+        <section id="ficha" class="relative">
+            <div class="content-container">
+                <div class="glass-panel credits-panel">
+                    <h2 class="section-title">Ficha Técnica</h2>
+                    <div class="credits-split">
+                        <div class="credits-col">
+                            <ul class="credits-list">
+                                <li><span>Gênero</span> <strong>Autoficção</strong></li>
+                                <li><span>Dramaturgia</span> <strong>Fernando Veríssimo</strong></li>
+                                <li><span>Direção</span> <strong>Fabiano Lana</strong></li>
+                                <li><span>Cenário</span> <strong>Fabiano Lana</strong></li>
+                                <li><span>Identidade Visual</span> <strong>Fabiano Lana</strong></li>
+                                <li><span>Produção</span> <strong>Fernando Veríssimo</strong></li>
+                            </ul>
+                        </div>
+                        <div class="credits-col">
+                            <ul class="credits-list">
+                                <li><span>Figurinos</span> <strong>Alexandre Colla</strong></li>
+                                <li><span>Prep. Vocal</span> <strong>Suellen Ogando</strong></li>
+                                <li><span>Prep. Corporal</span> <strong>Ravel Cavalheiro</strong></li>
+                                <li><span>Técnico</span> <strong>Esteban Gonzalez</strong></li>
+                                <li><span>Projeções</span> <strong>Arthur Barbosa</strong></li>
+                                <li><span>Trilha</span> <strong>Veríssimo / Lana</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MUSIC & SFX CONTROLS -->
+        <div class="audio-controls">
+            <button id="music-toggle" class="glass-btn"><i class="fas fa-volume-mute"></i></button>
+        </div>
+
+        <audio id="bg-music" loop>
+            <source src="sound/soundtrack.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="sfx-laugh">
+            <source src="sound/risa.mp3" type="audio/mpeg">
+        </audio>
+
+        <footer>
+            <div class="footer-content">
+                <p>SCARLET &copy; 2026</p>
+                <div class="socials">
+                    <a href="https://www.instagram.com/espetaculoscarlet/" target="_blank">Instagram</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
