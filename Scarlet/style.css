@@ -143,7 +143,8 @@ body {
     /* Smooth return to normal */
     position: relative;
     cursor: default;
-    color: #fff;
+    color: var(--primary);
+    /* Red by default */
     transform-origin: center center;
 }
 
