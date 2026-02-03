@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Mobile Menu Logic
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenu && navLinks) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+
     // Audio Systems
     const bgMusic = document.getElementById('bg-music');
     const sfxLaugh = document.getElementById('sfx-laugh');
