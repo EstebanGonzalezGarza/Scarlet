@@ -139,16 +139,22 @@ body {
 /* Individual Letters */
 .title-char {
     display: inline-block;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease-out;
+    /* Smooth return to normal */
     position: relative;
     cursor: default;
+    color: #fff;
+    transform-origin: center center;
 }
 
 .title-char:hover {
-    color: #ffffff;
-    transform: scale(1.5) translateY(-20px);
-    text-shadow: 0 0 40px rgba(255, 255, 255, 0.9), 0 0 80px rgba(255, 255, 255, 0.5);
-    z-index: 100;
+    color: #ffffff !important;
+    transform: scale(1.4);
+    /* Scaled up but no vertical shift to avoid sticking */
+    text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px var(--primary);
+    /* Intense white glow */
+    z-index: 999;
+    /* Always on top */
 }
 
 /* Glitch Effect on Title Wrapper */

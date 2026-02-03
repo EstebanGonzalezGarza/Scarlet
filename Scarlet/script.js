@@ -21,34 +21,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Audio Systems
     const bgMusic = document.getElementById('bg-music');
-    const sfxLaugh = document.getElementById('sfx-laugh');
+    const sfxLaugh = document.getElementById('sfx-laugh'); // Source element
     const musicBtn = document.getElementById('music-toggle');
     let isMusicPlaying = false;
 
-    // Background Music Toggle
-    if (musicBtn && bgMusic) {
-        bgMusic.volume = 0.4; // 40% volume default
+    // Auto-Play Attempt on First User Interaction (Any click)
+    const enableAudio = () => {
+        if (!isMusicPlaying && bgMusic) {
+            bgMusic.volume = 0.5;
+            bgMusic.play().then(() => {
+                isMusicPlaying = true;
+                if (musicBtn) musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }).catch(() => {
+                // Browser blocked it, waiting for explicit click on button
+            });
+        }
+        // Remove listener after first attempt
+        document.removeEventListener('click', enableAudio);
+    };
+    document.addEventListener('click', enableAudio);
 
-        musicBtn.addEventListener('click', () => {
+    // Manual Toggle
+    if (musicBtn && bgMusic) {
+        musicBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent triggering the global click above
             if (isMusicPlaying) {
                 bgMusic.pause();
                 musicBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                isMusicPlaying = false;
             } else {
-                bgMusic.play().catch(e => console.log("Audio play failed interaction required"));
+                bgMusic.play();
                 musicBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                isMusicPlaying = true;
             }
-            isMusicPlaying = !isMusicPlaying;
         });
     }
 
-    // Hover Sound Effects (Title)
-    const titles = document.querySelectorAll('.cinematic-title, .cinematic-subtitle');
-    titles.forEach(title => {
-        title.addEventListener('mouseenter', () => {
-            if (sfxLaugh && isMusicPlaying) { // Only play SFX if user has enabled audio
-                sfxLaugh.currentTime = 0;
-                sfxLaugh.volume = 0.6;
-                sfxLaugh.play().catch(e => { }); // Ignore interaction errors
+    // Hover Sound Effects (Title) - Using Audio Cloning for overlapping sounds
+    document.querySelectorAll('.title-char').forEach(char => {
+        char.addEventListener('mouseenter', () => {
+            // Visuals handled by CSS
+            // Audio logic:
+            if (sfxLaugh && isMusicPlaying) {
+                // Clone the node to allow overlapping laughs
+                const laughClone = sfxLaugh.cloneNode();
+                laughClone.volume = 0.6;
+                laughClone.play().catch(e => { });
+                // Cleanup clone after playing
+                laughClone.onended = () => laughClone.remove();
             }
         });
     });
@@ -67,18 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
         titleElement.innerHTML = text.split('').map(char =>
             `<span class="title-char">${char}</span>`
         ).join('');
-
-        // Add simple hover sound effect only (Visuals handled by CSS)
-        document.querySelectorAll('.title-char').forEach(char => {
-            char.addEventListener('mouseenter', () => {
-                // Play Sound on hover
-                if (sfxLaugh && isMusicPlaying) {
-                    sfxLaugh.currentTime = 0;
-                    sfxLaugh.volume = 0.4;
-                    sfxLaugh.play().catch(e => { });
-                }
-            });
-        });
     }
 
     // Scroll Indicator Animation
