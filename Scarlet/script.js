@@ -19,6 +19,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // SCENE 1: CINEMATIC CAROUSEL
+    const initCarousel = () => {
+        const slides = document.querySelectorAll('.slide');
+        if (slides.length === 0) return;
+
+        let currentSlide = 0;
+        const intervalTime = 5000; // 5 seconds per scene
+
+        setInterval(() => {
+            // Remove active from current
+            slides[currentSlide].classList.remove('active');
+
+            // Move to next
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            // Add active to next
+            slides[currentSlide].classList.add('active');
+        }, intervalTime);
+    };
+    initCarousel();
+
     // Audio Systems
     const bgMusic = document.getElementById('bg-music');
     const sfxLaugh = document.getElementById('sfx-laugh'); // Source element
