@@ -40,6 +40,27 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     initCarousel();
 
+    // ==========================================
+    // SCENE: GLOBAL ATMOSPHERIC BACKGROUND
+    // Slow, dreamlike slideshow behind all content
+    // Interval: 10 seconds per image (very slow, contemplative)
+    // ==========================================
+    const initGlobalBackground = () => {
+        const bgSlides = document.querySelectorAll('#global-bg-slideshow .bg-slide');
+        if (bgSlides.length === 0) return;
+
+        let currentBg = 0;
+        const bgIntervalTime = 10000; // 10 seconds per background image
+
+        setInterval(() => {
+            bgSlides[currentBg].classList.remove('active');
+            currentBg = (currentBg + 1) % bgSlides.length;
+            bgSlides[currentBg].classList.add('active');
+        }, bgIntervalTime);
+    };
+
+    initGlobalBackground();
+
     // Audio Systems
     const bgMusic = document.getElementById('bg-music');
     const sfxLaugh = document.getElementById('sfx-laugh'); // Source element
